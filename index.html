@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pestré dny na SŠAI</title>
+
+    <style>
+        body{
+            background-color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            margin: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+            margin: 1rem;
+        }
+        .prvni{
+            background-color: #565151;
+            border-radius: 1rem;
+            padding: 1rem;
+            
+        }
+        .druhy{
+            background-color: #787878;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+        .treti{
+            background-color: #b4b4b4;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+        @media screen and (max-width: 600px){
+            .grid{
+                grid-template-columns: 1fr;
+            }
+            .prvni, .druhy, .treti{
+                display:flex;
+                flex-wrap: wrap;
+            }
+            h2{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+        h2{
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 1rem;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th{
+            text-align: left;
+            padding: 0.5rem;
+            border-bottom: 1px solid #000;
+        }
+        td{
+            padding: 0.5rem;
+            border-bottom: 1px solid #000;
+        }
+        .more{
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem;
+            position: relative;
+            top: 0;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            margin-left: auto;
+
+        }
+        .active, .more:hover{
+            background-color: #000;
+            color: #fff;
+        }
+        span{
+            display: none;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem;
+        }
+        /* .more:active span{
+            display: block;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in-out;
+        } */
+        .more:active{
+            background-color: #000;
+            color: #fff;
+        }
+        .more::after > span{
+            display: block;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            display: block;
+            text-align: right;
+        }
+        li > strong{
+            display: block;
+            text-align: left;
+        }
+        .kratka_1{
+            background-color: #b8b8b8;
+        }
+        .kratka_2{
+            background-color: #787878;
+        }
+        .dlouha{
+            background-color: #b08383;
+        }
+        .locked h3{
+            background-color: #000;
+            color: #fff;
+        }
+        .locked{
+            background-color: #000;
+        }
+        
+        a > button.registrace{
+            background-color: rgba(9, 3, 168, 0.402);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 800;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem;
+            position: relative;
+            top: 0;
+            color: #000;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            text-align: center;
+            margin-left: auto;
+            
+        }
+        a > button.registrace:hover{
+            background-color: rgb(237, 9, 9);
+            color: #fff;
+            scale: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seznam aktivit a registrace</h1>
+    <div class="grid">
+        <div class="prvni">
+            <h2>20.12. 2022</h2>
+            <a href="#"><button class="registrace">Registrace</button></a>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Přednáška Jak vydělávat 1 milion denně aneb Kolik peněz potřebuješ, abys byl v životě šťastný?</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:20</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Bude doplněno</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S103</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Přednáška od majitele společnosti Brandcloud.pro.<br>
+                                Podmínkou účasti je vyplnění dotazníku, připravení jedné otázky a donést si tužku a papír</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Přednáška Ikony a trendy – revoluce v 21. století</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:25-10:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Bude doplněno</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S103</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Přednáška od majitele společnosti Brandcloud.pro.<br>
+                                Podmínkou účasti je vyplnění dotazníku, připravení jedné otázky a donést si tužku a papír</p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Přednáška From Start-up to Fuck-up</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>50 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>10:30-12:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Bude doplněno</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S205</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Přednáška od Heinricha Homoly, který se podílel například na tvorbě marketingové reklamy Fancy Fries. Obsahem přednášky jsou jeho počáteční neúspěchy v podnikání a následný zlom a záchrana situace.<br>
+                                Podmínkou účasti je vyplnění dotazníku, připravení jedné otázky a donést si tužku a papír</p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Bruslení na Letné</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>20 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Zuzana Dologhová</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Kluziště Na Letné</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bruslení na Letné je aktivita zaměřená na všechny studenty, kteří mají zájem o bruslení.
+                                    <br>
+                                    Podmínkou účasti jsou brusle.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj ve fotbale - registrace v kabinetu tělocviku!</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>25-39 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Petr Šareš</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Tělocvična</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci vytvoří týmy po 5-8 studentech a budou se utkávat v fotbale. Vítězové budou odměněni.
+                                    Jeden tým bude složen z učitelů.<br>
+                                    Podmínkou účasti je sportovní vybavení a přihláška vyplněná u učitelů tělesné výchovy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v PC hrách 1 - xxx</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Jozef Šteiner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N305</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci budou hrát v PC hrách. Vítězové budou odměněni.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě a přihláška vyplněná u učitele Jozefa Šteinera.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v PC hrách 2 - xxx</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Jozef Šteiner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N307</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci budou hrát v PC hrách. Vítězové budou odměněni.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě a přihláška vyplněná u učitele Jozefa Šteinera.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Workshop - Automatizovaná práce s daty aneb jak udělat 90% práce za 10% času - MS Excel</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N308</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci se naučí automatizovat práci s daty v MS Excelu. V průběhu workshopu budou vytvářet a upravovat tabulky, grafy, makra a další funkce.
+                                    Primárně se naučí vytvářet automatizované procesy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Přednáška IKT pro ,,neajťáky"</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N308</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Canva, stahování a editing obsahu, google scholar, práce s mailem a kalendářem
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>DIM 1 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>DIM 2 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Odborná ANG pro autoobory</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Helena Nováková</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Bude doplněno</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Odborná angličtina pro autoobory. Zaměřená na přípravu do budoucího zaměstnání.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Příprava k závěrečným zkouškám - T3.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T3.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Vít Meloun</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S112</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Příprava k závěrečným zkouškám pro třídu T3.B
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Návštěva židovského muzea - I1.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I1.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Renata Žďárská</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva židovského muzea pro I1.B
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Návštěva židovského muzea - T1.A</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T1.A</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Klára Limberská</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva židovského muzea pro T1.A
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+<!-----------------------DRUHÁ ČÁST-------------------------------->
+        <div class="druhy">
+            <h2>21.12. 2022</h2>
+            <a href="#"><button class="registrace">Registrace</button></a>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj ve florbalu - registrace v kabinetu tělocviku!</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30-42 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Petr Polívka</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Tělocvična</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci vytvoří týmy po 5-8 studentech a budou se utkávat v florbale. Vítězové budou odměněni.
+                                    <br>
+                                    Podmínkou účasti je sportovní vybavení a přihláška vyplněná u učitelů tělesné výchovy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v PC hrách - xxx</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Jozef Šteiner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N305</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci budou hrát v PC hrách. Vítězové budou odměněni.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě a přihláška vyplněná u učitele Jozefa Šteinera.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+
+                <tr class="polozka kratka_2">
+                    <td><h3>Přednáška IKT pro ,,neajťáky" - obsah na základě hlasování</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N308</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Přednáška bude zaměřena na základní poznatky z oblasti IKT.
+                                    <br>
+                                    Podmínkou účasti je vyplnění dotazníku ohledně výběru témat.
+                                    <br>
+                                    Možné téma:
+                                    <br>
+                                    - Základy počítačové grafiky
+                                    <br>
+                                    - Základy počítačového zpracování textu
+                                    <br>
+                                    - Základy počítačového zpracování obrázků
+                                    <br>
+                                    - Canva
+                                    <br>
+                                    - Wordpress
+                                
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Workshop - Tvorba webových stránek pro pokročilé - display:flex; pseudotřídy; @media</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N206</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Workshop bude zaměřen na pokročilé téma z oblasti webových stránek.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě GitHub a základní wireframe vlastních www stránek.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Diskuzní panel - Setkání s ředitelem</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>10 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Milan Vorel</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Ředitelna</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Diskuzní panel bude zaměřen na setkání a rozpravu s ředitelem školy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Šachový turnaj - Blitz 5|0</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>50 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Lukáš Hromádka</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Jídelna</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Turnaj bude zaměřen na šachy ve formátu BLITZ - 5|0 Arena - hráč s nejvyšším počtem bodů vítězí.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě chess.com. Smartphone při vyšší účasti či vlastní ntb(máme omezený počet.)
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Doučování ELT 1. ročník IT</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Pavel Janýr</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N205</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Doučování bude zaměřené na přípravu na zkoušky z předmětu ELT.
+                                    <br>
+                                    Podmínkou účasti je předchozí účast na předmětu ELT pro 1. ročník v oboru Informační technologie.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Doučování ELT 2. ročník IT</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Pavel Janýr</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N205</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Doučování bude zaměřené na přípravu na zkoušky z předmětu ELT.
+                                    <br>
+                                    Podmínkou účasti je předchozí účast na předmětu ELT pro 2. ročník v oboru Informační technologie.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Bruslení na Letné</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>20 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Jaroslava Čapková</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Kluziště Na Letné</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bruslení na Letné je aktivita zaměřená na všechny studenty, kteří mají zájem o bruslení.
+                                    <br>
+                                    Podmínkou účasti jsou brusle.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Výstava - Fotograf Festival: Nikdo sem nepatří víc než vy</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>10:00-12:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Kamil Rychtecký</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Národní galerie - Veletržní palác</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Cena je zdarma.<br>
+                                    Ústřední výstava Fotograf Festivalu ve Veletržním paláci Národní galerie Praha představuje umělecké strategie, které zpochybňují konstrukci a manipulaci nacionalistických narativů pro politické účely. Díla umělců a umělkyň ze zemí střední Evropy zachycují nedávný vývoj a jeho historickou podmíněnost, vliv institucí, napětí mezi lokálním a globálním děním či vzdor vůči ideologiím, které prosazují ideu kolektivní subjektivity jakožto stejnorodé skupiny lidí. Na základě konceptu chronopolitiky výstava zpochybňuje politické tendence, jež vytváří představu vývoje od sjednocené a neposkvrněné minulosti k idealizované budoucnosti, kterou je nutné ochraňovat před hrozbami diverzity, genderové uvědomělosti a emancipací marginalizovaných skupin. Zdánlivě přirozený a nevyhnutelný stav věcí je umělci a umělkyněmi zobrazován jako podmíněný provázanými politickými, ekonomickými a církevními zájmy. Prezentovaná díla proto zachycují mechanismy, které ovlivňují prosazování diskriminujících opatření ve společnosti, ale také utvářejí strategie protestu, reprezentace a legitimizace za účelem hledání sjednocení společnosti ve společných rozporech.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>DIM 1 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>DIM 2 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Workshop - Na den učitelem</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Bohumil Krajča</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N105</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci vytvoří týmy po 5-6 studentech.
+                                    <br>
+                                    Každý tým si vybere téma, kterému se bude věnovat. Následně si tým vybere učitele, který bude tým poradit a pomoci mu při vytváření projektu. Týmy budou mít 3 hodiny na vytvoření projektu. Po 3 hodinách budou týmy představovat své projekty ostatním týmům a učitelům. Učitelé a žáci budou hodnotit projekty.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v Ping pongu 2v2 - registrace v kabinetu tělocviku!</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>24 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Pavel Bohata</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Tělocvična</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Turnaj v ping pongu 2v2.
+                                    <br>
+                                    Podmínkou účasti je sportovní vybavení a přihláška vyplněná u učitelů tělesné výchovy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Přednáška AMBIS</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:00-10:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Andrea Vlasáková</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S103</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Výlet T2.A</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T2.A</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Andrea Burešová</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Pouze pro třídu T2.A<br>
+                                    Informace u paní Burešové
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+<!-----------------------TŘETÍ ČÁST-------------------------------->
+        <div class="treti">
+            <h2>22.12. 2022</h2>
+            <a href="#"><button class="registrace">Registrace</button></a>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Přednáška Můžeš podnikat</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>50 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>10:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Bude doplněno</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S205</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Přednáška od spolku Můžeš podnikat.<br>
+                                    Přednášejícími jsou: Ondřej Krátký (Liftago), Kateřina Ryvolová(KP projekt)
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+
+                <tr class="polozka locked">
+                    <td><h3>Návštěva kina - I1.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I1.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Barbara Veselá</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva kina pro I1.B
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v nohejbale - registrace v kabinetu tělocviku!</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Petr Šareš</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Tělocvična</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci vytvoří týmy po 3. Vítězové budou odměněni.
+                                    Jeden tým bude složen z učitelů.<br>
+                                    Podmínkou účasti je sportovní vybavení a přihláška vyplněná u učitelů tělesné výchovy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Návštěva kina - S2.E</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro S2.E</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Helena Růžičková</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva kina pro S2.E
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v Ping pongu 1v1 - registrace v kabinetu tělocviku!</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>24 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Petr Polívka</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Tělocvična</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Turnaj v ping pongu 1v1.
+                                    <br>
+                                    Podmínkou účasti je sportovní vybavení a přihláška vyplněná u učitelů tělesné výchovy.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Turnaj v PC hrách - xxx</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-12:00</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Jozef Šteiner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N305</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci budou hrát v PC hrách. Vítězové budou odměněni.
+                                    <br>
+                                    Podmínkou účasti je účet na platformě a přihláška vyplněná u učitele Jozefa Šteinera.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>Kariérové poradenství obecně - Kdo bych mohl v práci být?</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:55</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N308</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Účelem wokrshopu je příprava studentů na jejich budoucí povolání a výběr vhodného studijního oboru.
+                                    <br>
+                                    V rámci workshopu budou studenti pracovat s nástroji, které jim pomohou při výběru studijního oboru a budoucího zaměstnání.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>Workshop - Práce s 3D tiskem</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ondřej Pacner</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N206</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Účelem workshopu je představení 3D tisku a jeho možností.
+                                    <br>
+                                    V rámci workshopu budou studenti pracovat s 3D tiskárnou a vytvářet vlastní modely.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                
+                <tr class="polozka kratka_1">
+                    <td><h3>Přednáška - Školní časopis aneb poznej svého vnitřního žurnalistu</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Marcel Kukuczka</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N113</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Přednáška je zaměřena na studenty, kteří mají zájem o psaní článků a vytváření školního časopisu.
+                                    <br>
+                                    V rámci přednášky budou studenti seznámeni s možnostmi vytváření školního časopisu.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_1">
+                    <td><h3>DIM 1 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka kratka_2">
+                    <td><h3>DIM 2 - bude doplněno</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>15 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>9:55-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Lucia Studená</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N306</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Bude doplněno
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka dlouha">
+                    <td><h3>Workshop - Na den učitelem</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Bohumil Krajča</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>N105</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Žáci vytvoří týmy po 5-6 studentech.
+                                    <br>
+                                    Každý tým si vybere téma, kterému se bude věnovat. Následně si tým vybere učitele, který bude tým poradit a pomoci mu při vytváření projektu. Týmy budou mít 3 hodiny na vytvoření projektu. Po 3 hodinách budou týmy představovat své projekty ostatním týmům a učitelům. Učitelé a žáci budou hodnotit projekty.
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Příprava k závěrečným zkouškám - T3.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T3.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-9:35</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Pavel Hampacher</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S210</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Příprava k závěrečným zkouškám pro třídu T3.B
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Vánoční besídka - I2.C</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I2.C</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>8:00-11:30</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Ing. Andrea Vlasáková</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>S103</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Vánoční besídka pro třídu I2.C
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Návštěva kina - T4.C</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T4.C</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Kouřilová Daša</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva kina pro T4.C
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Výlet T1.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro T1.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Zdeněk Chlebeček</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>xxx</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Návštěva kina pro T4.C
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Výlet I4.B</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I4.B</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Pavel Janýr</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Praha</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Výlet Prahou pro I4.B
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Výlet I2.A</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I2.A</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>Mgr. Monika Kopecká</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Praha</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Výlet Prahou pro I2.A
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka locked">
+                    <td><h3>Výlet I1.A</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>Pouze pro I1.A</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>Informace dostávají studenti od dozoru</p>
+                            <li>
+                            <li>
+                                <strong>Dozor:</strong>
+                                <br>
+                                <p>PaedDr. Monika Kopecká</p>
+                            <li>
+                            <li>
+                                <strong>Lokace:</strong>
+                                <br>
+                                <p>Praha</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>
+                                    Výlet Prahou pro I1.A
+                                </p>
+                            <li>
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var acc = document.getElementsByClassName("more");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+
+        
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+        panel.style.display = "none";
+        } else {
+        panel.style.display = "block";
+        }
+        });
+    }
+</script>
+
+<!--VZOR VELKÝ-->
+<!--
+    <div class="grid">
+        <div class="prvni">
+            <h2>20.12. 2022</h2>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka">
+                    <td><h3>1. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka">
+                    <td><h3>2. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="druhy">
+            <h2>21.12. 2022</h2>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka">
+                    <td><h3>1. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka">
+                    <td><h3>2. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="treti">
+            <h2>22.12. 2022</h2>
+            <table class="prvni_aktivity">
+                <tr>
+                    <th>Aktivity</th>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr class="polozka">
+                    <td><h3>1. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+                <tr class="polozka">
+                    <td><h3>2. Aktivita</h3>
+                    <button class="more">Více</button>
+                    <span id="info">
+                        <ul>
+                            <li>
+                                <strong>Limit studentů:</strong>
+                                <br>
+                                <p>30 studentů</p>
+                            <li>
+                            <li>
+                                <strong>Časový rozsah:</strong>
+                                <br>
+                                <p>2 hodiny</p>
+                            <li>
+                            <li>
+                                <strong>Popis:</strong>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                            <li>
+                            
+                        </ul>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+-->
+
+<!--VZOR MALÝ-->
+<!--
+    <tr class="polozka">
+        <td><h3>1. Aktivita</h3>
+        <button class="more">Více</button>
+        <span id="info">
+            <ul>
+                <li>
+                    <strong>Limit studentů:</strong>
+                    <br>
+                    <p>30 studentů</p>
+                <li>
+                <li>
+                    <strong>Časový rozsah:</strong>
+                    <br>
+                    <p>2 hodiny</p>
+                <li>
+                <li>
+                    <strong>Dozor:</strong>
+                    <br>
+                    <p>někdo</p>
+                <li>
+                <li>
+                    <strong>Lokace:</strong>
+                    <br>
+                    <p>S100</p>
+                <li>
+                <li>
+                    <strong>Popis:</strong>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia magni porro vero a debitis delectus similique, laudantium autem earum tenetur quaerat! Sunt tempora cumque eveniet maiores quam enim ea?</p>
+                <li>
+                
+            </ul>
+        </span>
+        </td>
+    </tr>
+-->
